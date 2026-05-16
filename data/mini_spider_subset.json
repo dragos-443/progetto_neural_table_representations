@@ -1,0 +1,102 @@
+[
+  {
+    "db_id": "concert_singer",
+    "question": "Show the stadium name and capacity with most number of concerts in year 2014 or after.",
+    "query": "SELECT T2.name ,  T2.capacity FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T1.year  >=  2014 GROUP BY T2.stadium_id ORDER BY count(*) DESC LIMIT 1"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "What is the name and capacity of the stadium with the most concerts after 2013 ?",
+    "query": "select t2.name ,  t2.capacity from concert as t1 join stadium as t2 on t1.stadium_id  =  t2.stadium_id where t1.year  >  2013 group by t2.stadium_id order by count(*) desc limit 1"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "What is the average, minimum, and maximum age of all singers from France?",
+    "query": "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "Which year has most number of concerts?",
+    "query": "SELECT YEAR FROM concert GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "Find the number of concerts happened in the stadium with the highest capacity .",
+    "query": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "Show the stadium name and the number of concerts in each stadium.",
+    "query": "SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id GROUP BY T1.stadium_id"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "Show the name and theme for all concerts and the number of singers in each concert.",
+    "query": "SELECT T2.concert_name ,  T2.theme ,  count(*) FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id GROUP BY T2.concert_id"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "List singer names and number of concerts for each singer.",
+    "query": "SELECT T2.name ,  count(*) FROM singer_in_concert AS T1 JOIN singer AS T2 ON T1.singer_id  =  T2.singer_id GROUP BY T2.singer_id"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "Show the name and the release year of the song by the youngest singer.",
+    "query": "SELECT song_name ,  song_release_year FROM singer ORDER BY age LIMIT 1"
+  },
+  {
+    "db_id": "concert_singer",
+    "question": "Show all countries and the number of singers in each country.",
+    "query": "SELECT country ,  count(*) FROM singer GROUP BY country"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find number of pets owned by students who are older than 20.",
+    "query": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid WHERE T1.age  >  20"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the number of dog pets that are raised by female students (with sex F).",
+    "query": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T1.sex  =  'F' AND T3.pettype  =  'dog'"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the average and maximum age for each type of pet.",
+    "query": "SELECT avg(pet_age) ,  max(pet_age) ,  pettype FROM pets GROUP BY pettype"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the number of pets for each student who has any pet and student id.",
+    "query": "SELECT count(*) ,  T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T1.stuid"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the first name and gender of student who have more than one pet.",
+    "query": "SELECT T1.fname ,  T1.sex FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T1.stuid HAVING count(*)  >  1"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the number of pets whose weight is heavier than 10.",
+    "query": "SELECT count(*) FROM pets WHERE weight  >  10"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the weight of the youngest dog.",
+    "query": "SELECT weight FROM pets ORDER BY pet_age LIMIT 1"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the maximum weight for each type of pet. List the maximum weight and pet type.",
+    "query": "SELECT max(weight) ,  petType FROM pets GROUP BY petType"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the first name of students who have cat or dog pet.",
+    "query": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat' OR T3.pettype  =  'dog'"
+  },
+  {
+    "db_id": "pets_1",
+    "question": "Find the first name of students who have both cat and dog pets .",
+    "query": "select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'cat' intersect select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'dog'"
+  }
+]

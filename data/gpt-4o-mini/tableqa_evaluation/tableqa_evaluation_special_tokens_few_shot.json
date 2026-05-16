@@ -1,0 +1,671 @@
+{
+  "summary": {
+    "serialization_strategy": "special_tokens",
+    "prompting_mode": "few_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.65,
+    "avg_cell_recall": 0.7083333333333333,
+    "avg_tuple_cardinality_error": 0.15,
+    "avg_tuple_order": 0.4,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.55
+  },
+  "results": [
+    {
+      "id": 1,
+      "db_id": "concert_singer",
+      "question": "Show the stadium name and capacity with most number of concerts in year 2014 or after.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Somerset Park",
+          11998
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Somerset Park",
+          11998
+        ],
+        [
+          "Stark's Park",
+          10104
+        ],
+        [
+          "Glebe Park",
+          3960
+        ]
+      ],
+      "cell_precision": 0.3333333333333333,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 2,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 2,
+      "db_id": "concert_singer",
+      "question": "What is the name and capacity of the stadium with the most concerts after 2013 ?",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Somerset Park",
+          11998
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Somerset Park",
+          11998
+        ],
+        [
+          "Glebe Park",
+          3960
+        ]
+      ],
+      "cell_precision": 0.5,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 1,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 3,
+      "db_id": "concert_singer",
+      "question": "What is the average, minimum, and maximum age of all singers from France?",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          34.5,
+          25,
+          43
+        ]
+      ],
+      "pred_rows": [
+        [
+          38.5,
+          25,
+          52
+        ]
+      ],
+      "cell_precision": 0.3333333333333333,
+      "cell_recall": 0.3333333333333333,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 4,
+      "db_id": "concert_singer",
+      "question": "Which year has most number of concerts?",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "2015"
+        ]
+      ],
+      "pred_rows": [
+        [
+          2014
+        ]
+      ],
+      "cell_precision": 0.0,
+      "cell_recall": 0.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 5,
+      "db_id": "concert_singer",
+      "question": "Find the number of concerts happened in the stadium with the highest capacity .",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          0
+        ]
+      ],
+      "pred_rows": [
+        [
+          1
+        ]
+      ],
+      "cell_precision": 0.0,
+      "cell_recall": 0.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 6,
+      "db_id": "concert_singer",
+      "question": "Show the stadium name and the number of concerts in each stadium.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Stark's Park",
+          1
+        ],
+        [
+          "Glebe Park",
+          1
+        ],
+        [
+          "Somerset Park",
+          2
+        ],
+        [
+          "Recreation Park",
+          1
+        ],
+        [
+          "Balmoor",
+          1
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Stark's Park",
+          1
+        ],
+        [
+          "Somerset Park",
+          2
+        ],
+        [
+          "Glebe Park",
+          1
+        ],
+        [
+          "Balmoor",
+          1
+        ],
+        [
+          "Recreation Park",
+          1
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 7,
+      "db_id": "concert_singer",
+      "question": "Show the name and theme for all concerts and the number of singers in each concert.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Auditions",
+          "Free choice",
+          3
+        ],
+        [
+          "Super bootcamp",
+          "Free choice 2",
+          2
+        ],
+        [
+          "Home Visits",
+          "Bleeding Love",
+          1
+        ],
+        [
+          "Week 1",
+          "Wide Awake",
+          1
+        ],
+        [
+          "Week 1",
+          "Happy Tonight",
+          2
+        ],
+        [
+          "Week 2",
+          "Party All Night",
+          1
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Auditions",
+          "Free choice",
+          3
+        ],
+        [
+          "Super bootcamp",
+          "Free choice 2",
+          2
+        ],
+        [
+          "Home Visits",
+          "Bleeding Love",
+          1
+        ],
+        [
+          "Week 1",
+          "Wide Awake",
+          1
+        ],
+        [
+          "Week 1",
+          "Happy Tonight",
+          2
+        ],
+        [
+          "Week 2",
+          "Party All Night",
+          1
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 8,
+      "db_id": "concert_singer",
+      "question": "List singer names and number of concerts for each singer.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Timbaland",
+          2
+        ],
+        [
+          "Justin Brown",
+          3
+        ],
+        [
+          "Rose White",
+          1
+        ],
+        [
+          "John Nizinik",
+          2
+        ],
+        [
+          "Tribal King",
+          2
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Timbaland",
+          2
+        ],
+        [
+          "Justin Brown",
+          3
+        ],
+        [
+          "John Nizinik",
+          2
+        ],
+        [
+          "Rose White",
+          1
+        ],
+        [
+          "Tribal King",
+          2
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 9,
+      "db_id": "concert_singer",
+      "question": "Show the name and the release year of the song by the youngest singer.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Love",
+          "2016"
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Love",
+          2016
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 10,
+      "db_id": "concert_singer",
+      "question": "Show all countries and the number of singers in each country.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "France",
+          4
+        ],
+        [
+          "Netherlands",
+          1
+        ],
+        [
+          "United States",
+          1
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Netherlands",
+          1
+        ],
+        [
+          "United States",
+          1
+        ],
+        [
+          "France",
+          4
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 11,
+      "db_id": "pets_1",
+      "question": "Find number of pets owned by students who are older than 20.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          0
+        ]
+      ],
+      "pred_rows": [
+        [
+          2
+        ]
+      ],
+      "cell_precision": 0.0,
+      "cell_recall": 0.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 12,
+      "db_id": "pets_1",
+      "question": "Find the number of dog pets that are raised by female students (with sex F).",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          2
+        ]
+      ],
+      "pred_rows": [
+        [
+          1
+        ]
+      ],
+      "cell_precision": 0.0,
+      "cell_recall": 0.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 13,
+      "db_id": "pets_1",
+      "question": "Find the average and maximum age for each type of pet.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          3.0,
+          3,
+          "cat"
+        ],
+        [
+          1.5,
+          2,
+          "dog"
+        ]
+      ],
+      "pred_rows": [
+        [
+          2.0,
+          3,
+          "cat"
+        ],
+        [
+          1.5,
+          2,
+          "dog"
+        ]
+      ],
+      "cell_precision": 0.8333333333333334,
+      "cell_recall": 0.8333333333333334,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 14,
+      "db_id": "pets_1",
+      "question": "Find the number of pets for each student who has any pet and student id.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          1,
+          1001
+        ],
+        [
+          2,
+          1002
+        ]
+      ],
+      "pred_rows": [
+        [
+          1001,
+          1
+        ],
+        [
+          1002,
+          2
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 0,
+      "tuple_constraint": 1,
+      "exact_match": false
+    },
+    {
+      "id": 15,
+      "db_id": "pets_1",
+      "question": "Find the first name and gender of student who have more than one pet.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Tracy",
+          "F"
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Tracy",
+          "F"
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 16,
+      "db_id": "pets_1",
+      "question": "Find the number of pets whose weight is heavier than 10.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          2
+        ]
+      ],
+      "pred_rows": [
+        [
+          2
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 17,
+      "db_id": "pets_1",
+      "question": "Find the weight of the youngest dog.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          9.3
+        ]
+      ],
+      "pred_rows": [
+        [
+          9.3
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 18,
+      "db_id": "pets_1",
+      "question": "Find the maximum weight for each type of pet. List the maximum weight and pet type.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          12.0,
+          "cat"
+        ],
+        [
+          13.4,
+          "dog"
+        ]
+      ],
+      "pred_rows": [
+        [
+          12.0,
+          "cat"
+        ],
+        [
+          13.4,
+          "dog"
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 19,
+      "db_id": "pets_1",
+      "question": "Find the first name of students who have cat or dog pet.",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [
+        [
+          "Linda"
+        ],
+        [
+          "Tracy"
+        ]
+      ],
+      "pred_rows": [
+        [
+          "Linda"
+        ],
+        [
+          "Tracy"
+        ]
+      ],
+      "cell_precision": 1.0,
+      "cell_recall": 1.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    },
+    {
+      "id": 20,
+      "db_id": "pets_1",
+      "question": "Find the first name of students who have both cat and dog pets .",
+      "serialization_strategy": "special_tokens",
+      "prompting_mode": "few_shot",
+      "gold_rows": [],
+      "pred_rows": [],
+      "cell_precision": 0.0,
+      "cell_recall": 0.0,
+      "tuple_cardinality_error": 0,
+      "tuple_order": 1,
+      "tuple_constraint": 1,
+      "exact_match": true
+    }
+  ]
+}

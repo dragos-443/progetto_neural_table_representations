@@ -1,0 +1,256 @@
+{
+  "concert_singer": {
+    "raw_schema": {
+      "db_id": "concert_singer",
+      "tables": {
+        "stadium": {
+          "columns": [
+            {
+              "name": "Stadium_ID",
+              "type": "INT",
+              "primary_key": true
+            },
+            {
+              "name": "Location",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Name",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Capacity",
+              "type": "INT",
+              "primary_key": false
+            },
+            {
+              "name": "Highest",
+              "type": "INT",
+              "primary_key": false
+            },
+            {
+              "name": "Lowest",
+              "type": "INT",
+              "primary_key": false
+            },
+            {
+              "name": "Average",
+              "type": "INT",
+              "primary_key": false
+            }
+          ],
+          "foreign_keys": []
+        },
+        "singer": {
+          "columns": [
+            {
+              "name": "Singer_ID",
+              "type": "INT",
+              "primary_key": true
+            },
+            {
+              "name": "Name",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Country",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Song_Name",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Song_release_year",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Age",
+              "type": "INT",
+              "primary_key": false
+            },
+            {
+              "name": "Is_male",
+              "type": "bool",
+              "primary_key": false
+            }
+          ],
+          "foreign_keys": []
+        },
+        "concert": {
+          "columns": [
+            {
+              "name": "concert_ID",
+              "type": "INT",
+              "primary_key": true
+            },
+            {
+              "name": "concert_Name",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Theme",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Stadium_ID",
+              "type": "TEXT",
+              "primary_key": false
+            },
+            {
+              "name": "Year",
+              "type": "TEXT",
+              "primary_key": false
+            }
+          ],
+          "foreign_keys": [
+            {
+              "from_column": "Stadium_ID",
+              "to_table": "stadium",
+              "to_column": "Stadium_ID"
+            }
+          ]
+        },
+        "singer_in_concert": {
+          "columns": [
+            {
+              "name": "concert_ID",
+              "type": "INT",
+              "primary_key": true
+            },
+            {
+              "name": "Singer_ID",
+              "type": "TEXT",
+              "primary_key": true
+            }
+          ],
+          "foreign_keys": [
+            {
+              "from_column": "Singer_ID",
+              "to_table": "singer",
+              "to_column": "Singer_ID"
+            },
+            {
+              "from_column": "concert_ID",
+              "to_table": "concert",
+              "to_column": "concert_ID"
+            }
+          ]
+        }
+      }
+    },
+    "prompt_text": "Database: concert_singer\nSchema:\n- stadium(Stadium_ID INT PRIMARY KEY, Location TEXT, Name TEXT, Capacity INT, Highest INT, Lowest INT, Average INT)\n- singer(Singer_ID INT PRIMARY KEY, Name TEXT, Country TEXT, Song_Name TEXT, Song_release_year TEXT, Age INT, Is_male bool)\n- concert(concert_ID INT PRIMARY KEY, concert_Name TEXT, Theme TEXT, Stadium_ID TEXT, Year TEXT)\n  FK: concert.Stadium_ID -> stadium.Stadium_ID\n- singer_in_concert(concert_ID INT PRIMARY KEY, Singer_ID TEXT PRIMARY KEY)\n  FK: singer_in_concert.Singer_ID -> singer.Singer_ID\n  FK: singer_in_concert.concert_ID -> concert.concert_ID"
+  },
+  "pets_1": {
+    "raw_schema": {
+      "db_id": "pets_1",
+      "tables": {
+        "Student": {
+          "columns": [
+            {
+              "name": "StuID",
+              "type": "INTEGER",
+              "primary_key": true
+            },
+            {
+              "name": "LName",
+              "type": "VARCHAR(12)",
+              "primary_key": false
+            },
+            {
+              "name": "Fname",
+              "type": "VARCHAR(12)",
+              "primary_key": false
+            },
+            {
+              "name": "Age",
+              "type": "INTEGER",
+              "primary_key": false
+            },
+            {
+              "name": "Sex",
+              "type": "VARCHAR(1)",
+              "primary_key": false
+            },
+            {
+              "name": "Major",
+              "type": "INTEGER",
+              "primary_key": false
+            },
+            {
+              "name": "Advisor",
+              "type": "INTEGER",
+              "primary_key": false
+            },
+            {
+              "name": "city_code",
+              "type": "VARCHAR(3)",
+              "primary_key": false
+            }
+          ],
+          "foreign_keys": []
+        },
+        "Has_Pet": {
+          "columns": [
+            {
+              "name": "StuID",
+              "type": "INTEGER",
+              "primary_key": false
+            },
+            {
+              "name": "PetID",
+              "type": "INTEGER",
+              "primary_key": false
+            }
+          ],
+          "foreign_keys": [
+            {
+              "from_column": "StuID",
+              "to_table": "Student",
+              "to_column": "StuID"
+            },
+            {
+              "from_column": "PetID",
+              "to_table": "Pets",
+              "to_column": "PetID"
+            }
+          ]
+        },
+        "Pets": {
+          "columns": [
+            {
+              "name": "PetID",
+              "type": "INTEGER",
+              "primary_key": true
+            },
+            {
+              "name": "PetType",
+              "type": "VARCHAR(20)",
+              "primary_key": false
+            },
+            {
+              "name": "pet_age",
+              "type": "INTEGER",
+              "primary_key": false
+            },
+            {
+              "name": "weight",
+              "type": "REAL",
+              "primary_key": false
+            }
+          ],
+          "foreign_keys": []
+        }
+      }
+    },
+    "prompt_text": "Database: pets_1\nSchema:\n- Student(StuID INTEGER PRIMARY KEY, LName VARCHAR(12), Fname VARCHAR(12), Age INTEGER, Sex VARCHAR(1), Major INTEGER, Advisor INTEGER, city_code VARCHAR(3))\n- Has_Pet(StuID INTEGER, PetID INTEGER)\n  FK: Has_Pet.StuID -> Student.StuID\n  FK: Has_Pet.PetID -> Pets.PetID\n- Pets(PetID INTEGER PRIMARY KEY, PetType VARCHAR(20), pet_age INTEGER, weight REAL)"
+  }
+}

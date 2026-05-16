@@ -1,0 +1,469 @@
+[
+  {
+    "id": 1,
+    "db_id": "concert_singer",
+    "question": "Show the stadium name and capacity with most number of concerts in year 2014 or after.",
+    "gold_sql": "SELECT T2.name ,  T2.capacity FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id WHERE T1.year  >=  2014 GROUP BY T2.stadium_id ORDER BY count(*) DESC LIMIT 1",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Name",
+        "Capacity"
+      ],
+      "rows": [
+        [
+          "Somerset Park",
+          11998
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 2,
+    "db_id": "concert_singer",
+    "question": "What is the name and capacity of the stadium with the most concerts after 2013 ?",
+    "gold_sql": "select t2.name ,  t2.capacity from concert as t1 join stadium as t2 on t1.stadium_id  =  t2.stadium_id where t1.year  >  2013 group by t2.stadium_id order by count(*) desc limit 1",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Name",
+        "Capacity"
+      ],
+      "rows": [
+        [
+          "Somerset Park",
+          11998
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 3,
+    "db_id": "concert_singer",
+    "question": "What is the average, minimum, and maximum age of all singers from France?",
+    "gold_sql": "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "avg(age)",
+        "min(age)",
+        "max(age)"
+      ],
+      "rows": [
+        [
+          34.5,
+          25,
+          43
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 4,
+    "db_id": "concert_singer",
+    "question": "Which year has most number of concerts?",
+    "gold_sql": "SELECT YEAR FROM concert GROUP BY YEAR ORDER BY count(*) DESC LIMIT 1",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Year"
+      ],
+      "rows": [
+        [
+          "2015"
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 5,
+    "db_id": "concert_singer",
+    "question": "Find the number of concerts happened in the stadium with the highest capacity .",
+    "gold_sql": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "count(*)"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 6,
+    "db_id": "concert_singer",
+    "question": "Show the stadium name and the number of concerts in each stadium.",
+    "gold_sql": "SELECT T2.name ,  count(*) FROM concert AS T1 JOIN stadium AS T2 ON T1.stadium_id  =  T2.stadium_id GROUP BY T1.stadium_id",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Name",
+        "count(*)"
+      ],
+      "rows": [
+        [
+          "Stark's Park",
+          1
+        ],
+        [
+          "Glebe Park",
+          1
+        ],
+        [
+          "Somerset Park",
+          2
+        ],
+        [
+          "Recreation Park",
+          1
+        ],
+        [
+          "Balmoor",
+          1
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 7,
+    "db_id": "concert_singer",
+    "question": "Show the name and theme for all concerts and the number of singers in each concert.",
+    "gold_sql": "SELECT T2.concert_name ,  T2.theme ,  count(*) FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id GROUP BY T2.concert_id",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "concert_Name",
+        "Theme",
+        "count(*)"
+      ],
+      "rows": [
+        [
+          "Auditions",
+          "Free choice",
+          3
+        ],
+        [
+          "Super bootcamp",
+          "Free choice 2",
+          2
+        ],
+        [
+          "Home Visits",
+          "Bleeding Love",
+          1
+        ],
+        [
+          "Week 1",
+          "Wide Awake",
+          1
+        ],
+        [
+          "Week 1",
+          "Happy Tonight",
+          2
+        ],
+        [
+          "Week 2",
+          "Party All Night",
+          1
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 8,
+    "db_id": "concert_singer",
+    "question": "List singer names and number of concerts for each singer.",
+    "gold_sql": "SELECT T2.name ,  count(*) FROM singer_in_concert AS T1 JOIN singer AS T2 ON T1.singer_id  =  T2.singer_id GROUP BY T2.singer_id",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Name",
+        "count(*)"
+      ],
+      "rows": [
+        [
+          "Timbaland",
+          2
+        ],
+        [
+          "Justin Brown",
+          3
+        ],
+        [
+          "Rose White",
+          1
+        ],
+        [
+          "John Nizinik",
+          2
+        ],
+        [
+          "Tribal King",
+          2
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 9,
+    "db_id": "concert_singer",
+    "question": "Show the name and the release year of the song by the youngest singer.",
+    "gold_sql": "SELECT song_name ,  song_release_year FROM singer ORDER BY age LIMIT 1",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Song_Name",
+        "Song_release_year"
+      ],
+      "rows": [
+        [
+          "Love",
+          "2016"
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 10,
+    "db_id": "concert_singer",
+    "question": "Show all countries and the number of singers in each country.",
+    "gold_sql": "SELECT country ,  count(*) FROM singer GROUP BY country",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Country",
+        "count(*)"
+      ],
+      "rows": [
+        [
+          "France",
+          4
+        ],
+        [
+          "Netherlands",
+          1
+        ],
+        [
+          "United States",
+          1
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 11,
+    "db_id": "pets_1",
+    "question": "Find number of pets owned by students who are older than 20.",
+    "gold_sql": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid WHERE T1.age  >  20",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "count(*)"
+      ],
+      "rows": [
+        [
+          0
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 12,
+    "db_id": "pets_1",
+    "question": "Find the number of dog pets that are raised by female students (with sex F).",
+    "gold_sql": "SELECT count(*) FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T2.petid  =  T3.petid WHERE T1.sex  =  'F' AND T3.pettype  =  'dog'",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "count(*)"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 13,
+    "db_id": "pets_1",
+    "question": "Find the average and maximum age for each type of pet.",
+    "gold_sql": "SELECT avg(pet_age) ,  max(pet_age) ,  pettype FROM pets GROUP BY pettype",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "avg(pet_age)",
+        "max(pet_age)",
+        "PetType"
+      ],
+      "rows": [
+        [
+          3.0,
+          3,
+          "cat"
+        ],
+        [
+          1.5,
+          2,
+          "dog"
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 14,
+    "db_id": "pets_1",
+    "question": "Find the number of pets for each student who has any pet and student id.",
+    "gold_sql": "SELECT count(*) ,  T1.stuid FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T1.stuid",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "count(*)",
+        "StuID"
+      ],
+      "rows": [
+        [
+          1,
+          1001
+        ],
+        [
+          2,
+          1002
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 15,
+    "db_id": "pets_1",
+    "question": "Find the first name and gender of student who have more than one pet.",
+    "gold_sql": "SELECT T1.fname ,  T1.sex FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid GROUP BY T1.stuid HAVING count(*)  >  1",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Fname",
+        "Sex"
+      ],
+      "rows": [
+        [
+          "Tracy",
+          "F"
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 16,
+    "db_id": "pets_1",
+    "question": "Find the number of pets whose weight is heavier than 10.",
+    "gold_sql": "SELECT count(*) FROM pets WHERE weight  >  10",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "count(*)"
+      ],
+      "rows": [
+        [
+          2
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 17,
+    "db_id": "pets_1",
+    "question": "Find the weight of the youngest dog.",
+    "gold_sql": "SELECT weight FROM pets ORDER BY pet_age LIMIT 1",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "weight"
+      ],
+      "rows": [
+        [
+          9.3
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 18,
+    "db_id": "pets_1",
+    "question": "Find the maximum weight for each type of pet. List the maximum weight and pet type.",
+    "gold_sql": "SELECT max(weight) ,  petType FROM pets GROUP BY petType",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "max(weight)",
+        "PetType"
+      ],
+      "rows": [
+        [
+          12.0,
+          "cat"
+        ],
+        [
+          13.4,
+          "dog"
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 19,
+    "db_id": "pets_1",
+    "question": "Find the first name of students who have cat or dog pet.",
+    "gold_sql": "SELECT DISTINCT T1.Fname FROM student AS T1 JOIN has_pet AS T2 ON T1.stuid  =  T2.stuid JOIN pets AS T3 ON T3.petid  =  T2.petid WHERE T3.pettype  =  'cat' OR T3.pettype  =  'dog'",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Fname"
+      ],
+      "rows": [
+        [
+          "Linda"
+        ],
+        [
+          "Tracy"
+        ]
+      ],
+      "error": null
+    }
+  },
+  {
+    "id": 20,
+    "db_id": "pets_1",
+    "question": "Find the first name of students who have both cat and dog pets .",
+    "gold_sql": "select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'cat' intersect select t1.fname from student as t1 join has_pet as t2 on t1.stuid  =  t2.stuid join pets as t3 on t3.petid  =  t2.petid where t3.pettype  =  'dog'",
+    "gold_result": {
+      "success": true,
+      "columns": [
+        "Fname"
+      ],
+      "rows": [],
+      "error": null
+    }
+  }
+]

@@ -1,0 +1,5 @@
+.env
+/spider
+Assignment “Neural Table Representations”.pdf
+__pycache__/
+*.py[cod]

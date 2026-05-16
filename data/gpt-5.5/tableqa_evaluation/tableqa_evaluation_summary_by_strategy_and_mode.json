@@ -1,0 +1,68 @@
+{
+  "row_wise_few_shot": {
+    "serialization_strategy": "row_wise",
+    "prompting_mode": "few_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.8916666666666666,
+    "avg_cell_recall": 0.925,
+    "avg_tuple_cardinality_error": 0.1,
+    "avg_tuple_order": 0.75,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.85
+  },
+  "row_wise_zero_shot": {
+    "serialization_strategy": "row_wise",
+    "prompting_mode": "zero_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.8916666666666666,
+    "avg_cell_recall": 0.9166666666666666,
+    "avg_tuple_cardinality_error": 0.1,
+    "avg_tuple_order": 0.7,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.8
+  },
+  "natural_language_few_shot": {
+    "serialization_strategy": "natural_language",
+    "prompting_mode": "few_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.8916666666666666,
+    "avg_cell_recall": 0.9166666666666666,
+    "avg_tuple_cardinality_error": 0.1,
+    "avg_tuple_order": 0.7,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.8
+  },
+  "natural_language_zero_shot": {
+    "serialization_strategy": "natural_language",
+    "prompting_mode": "zero_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.8916666666666666,
+    "avg_cell_recall": 0.9166666666666666,
+    "avg_tuple_cardinality_error": 0.1,
+    "avg_tuple_order": 0.7,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.8
+  },
+  "special_tokens_few_shot": {
+    "serialization_strategy": "special_tokens",
+    "prompting_mode": "few_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.8916666666666666,
+    "avg_cell_recall": 0.9166666666666666,
+    "avg_tuple_cardinality_error": 0.1,
+    "avg_tuple_order": 0.7,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.8
+  },
+  "special_tokens_zero_shot": {
+    "serialization_strategy": "special_tokens",
+    "prompting_mode": "zero_shot",
+    "num_examples": 20,
+    "avg_cell_precision": 0.8916666666666666,
+    "avg_cell_recall": 0.9166666666666666,
+    "avg_tuple_cardinality_error": 0.1,
+    "avg_tuple_order": 0.7,
+    "avg_tuple_constraint": 1.0,
+    "exact_match_accuracy": 0.8
+  }
+}
